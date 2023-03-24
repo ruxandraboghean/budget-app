@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2 class="sidebar-title">Budget</h2>
+            <div class="wallets">
+                <div class="header">
+                    <h3 class="title">Wallets</h3>
+                    <span class="add-button">+</span>
+                </div>
+                <div class="wallet-item">
+                    <img src='/icons/blue-wallet.svg' alt="wallet" />
+                    <div class="wallet-item-info">
+                        <span class="item-name">Home Wallet</span>
+                        <span class="total-item">400 RON</span>
+                    </div>
+                </div>
+                <div class="wallet-item">
+                    <img src='/icons/green-wallet.svg' alt="wallet" />
+                    <div class="wallet-item-info">
+                        <span class="item-name">Economies</span>
+                        <span class="total-item">1000 RON</span>
+                    </div>
+                </div>
+            </div>
+            <div class="categories">
+                <div class="header">
+                    <h3 class="title">Categories</h3>
+                    <span class="add-button">+</span>
+                </div>
+                <div class="category-item">
+                    <img src='/icons/home.svg' alt="wallet" />
+                    <div class="category-item-info">
+                        <span class="item-name">Utility</span>
+                        <span class="total-item">250 RON</span>
+                    </div>
+                </div>  
+                <div class="category-item">
+                    <img src='/icons/saving.svg' alt="wallet" />
+                    <div class="category-item-info">
+                        <span class="item-name">Saving</span>
+                        <span class="total-item">1000 RON</span>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src='/icons/shopping.svg' alt="wallet" />
+                    <div class="category-item-info">
+                        <span class="item-name">Shopping</span>
+                        <span class="total-item">430 RON</span>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src='/icons/personal.svg' alt="wallet" />
+                    <div class="category-item-info">
+                        <span class="item-name">Personal</span>
+                        <span class="total-item">150 RON</span>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src='/icons/health.svg' alt="wallet" />
+                    <div class="category-item-info">
+                        <span class="item-name">Health</span>
+                        <span class="total-item">70 RON</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="content">
+            <div class="content-header">
+                <p>
+                    Hi, John Doe! </br>
+                    How much did you spend today?
+                </p>
+                <button class="log-expense"> + Log Expense </button>
+            </div>
+            <div class="content-title-wrapper">
+                <img src="./icons/blue-wallet.svg" alt="wallet" />
+                <span class="content-title"> Home Wallet</span>
+            </div>
+            <div class="total-container">
+                <div class="container-incomes">
+                    <img src="./icons/incomes.svg" alt="incomes">
+                    <div>
+                        <span>Total incomes</span>
+                        <span> 700 RON </span>
+                    </div>
+                </div>
+                <div class="container-expenses">
+                    <img src="./icons/expenses.svg" alt="incomes">
+                    <div>
+                        <span>Total incomes</span>
+                        <span> 700 RON </span>
+                    </div>
+                </div>
+            </div>
+            <div class="history">
+                <div class="history-item">
+                    <span class="history-title">History</span>
+                    <div class="category-item">
+                        <img src='/icons/home.svg' alt="wallet" />
+                        <div class="category-item-info">
+                            <span class="item-name">Electriciy Bill</span>
+                            <span class="total-item">1000 RON</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <img src='/icons/shopping.svg' alt="wallet" />
+                        <div class="category-item-info">
+                            <span class="item-name">Pepco</span>
+                            <span class="total-item">1000 RON</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <img src='/icons/personal.svg' alt="wallet" />
+                        <div class="category-item-info">
+                            <span class="item-name">Brunch</span>
+                            <span class="total-item">1000 RON</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <img src='/icons/saving.svg' alt="wallet" />
+                        <div class="category-item-info">
+                            <span class="item-name">Scholarship</span>
+                            <span class="total-item">1000 RON</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <img src='/icons/personal.svg' alt="wallet" />
+                        <div class="category-item-info">
+                            <span class="item-name">Cinema</span>
+                            <span class="total-item">1000 RON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="functions.js"></script>
+</body>
+</html>
