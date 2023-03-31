@@ -1,37 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 * {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 100%;
 }
 
-.sidebar {
+.aside {
+    margin: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 56px 32px;
-    gap: 48px;
-    width: 25%;
-    height: 100vh;
+    justify-content: space-around;
+    padding:  1rem 1rem 1rem 3rem;
     background: #FFFFFF;
     border-right: 1px solid #E0E0E0;
+    flex: 2;
 }
 
-.sidebar-title {
-    font-style: italic;
-    font-weight: 800;
-    font-size: 36px;
-    background-color: #fff;
-    color: #374151;
-}
-
-.wallets, .categories {
-    width: 100%;
-
+.logo{
+    width: 6rem;
+    height: 4rem;
+    margin-bottom: 1rem;
 }
 
 .header {
@@ -39,66 +40,54 @@
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-
-    font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 
 .title {
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 100%;
-
     display: flex;
     align-items: center;
-
-
     color: #2F2F2F;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .add-button {
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 20px;
-
     text-align: center;
-    
     color: #374151;
-
     border: 1px dashed gray;
     padding: 0.25rem 0.5rem;
 }
 
-.wallet-item, .category-item {
+.component {
    display: flex;
-   padding: 1rem;
+   padding: 0.8rem;
 }
 
-.wallet-item-info, .category-item-info {
+.component-info {
     display: flex;
     flex-direction: column;
-    margin-left: 1rem;
+    margin-left: 0.8rem;
  }
 .item-name {
     color: #2F2F2F;
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .total-item {
     color: #828282;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 12px;
  }
 
 
@@ -106,15 +95,15 @@
 
 .content {
     background-color: #F5F5F5;
-    width: 75%;
-    height: 100vh;
+    flex: 7;
+    padding: 0.5rem 3rem;
 }
 
 .content-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 5rem;
+    margin: 0 2rem;
 }
 
 .log-expense {
@@ -127,13 +116,11 @@
     color:#fff;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-
+    font-size: 12px;
+    cursor: pointer;
     background: #252525;
     border-radius: 4px;
-
 }
-
 
 .content-title-wrapper {
     display: flex;
@@ -145,7 +132,7 @@
 .content-title {
     margin-left: 1rem;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 100%;
 }
 
@@ -167,3 +154,28 @@
 .history {
     padding: 5rem;
 }
+
+.total-card{
+    display: flex;
+    justify-content: space-around;
+    background-color: #cedad7;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.component-history {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+ }
+ 
+ .actions {
+    display: flex;
+    gap: 1rem;
+ }
+
+ .edit-btn, .remove-btn {
+    width: 1rem;
+    height: 1rem;
+ }
