@@ -9,7 +9,7 @@ export const renderHistoryItem = (expense) => {
             </div>
           </div>
           <div class="actions">
-            <span> ${expense.expenseAmount} </span>
+            <span> ${expense.expenseAmount} LEI </span>
               <span class="icon-pen-square"></span>
               <span class="icon-trash"></span>
           </div>

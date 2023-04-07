@@ -1,4 +1,5 @@
 import { totals } from "../mockData/totals.js";
+import { calculateIncomes } from "./calculateIncomes.js";
 import { TotalCard } from "./components/TotalCard.js";
 import { saveItemInLocalStorage } from "./saveItemInLocalStorage.js";
 
@@ -9,9 +10,12 @@ export const createTotalCards = () => {
 
   const totalsLS = JSON.parse(localStorage.getItem("totals"));
 
-  console.log(totalsLS, "@totalsLS");
   totalsLS
     .map((total) => {
+      if (total.title === "Total incomes") {
+        calculateIncomes(total);
+      }
+
       totalCards.innerHTML += TotalCard(total);
     })
     .join("");
