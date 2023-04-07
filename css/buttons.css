@@ -13,15 +13,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 1rem 3rem;
-    gap: 8px;
+    padding: 1rem 1.5rem;
     color:var(--primary-color);
-    font-style: normal;
-    font-weight: 500;
     font-size: 12px;
     cursor: pointer;
     background: var(--button-color);
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .log-expense-button:hover {

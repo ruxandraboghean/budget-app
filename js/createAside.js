@@ -1,7 +1,5 @@
 import { renderWidgets } from "./category/renderWidgets.js";
 import { renderWidget } from "./category/renderWidget.js";
-import { saveCategoriesInStorage } from "./category/saveCategoriesInStorage.js";
-import { saveWalletsInStorage } from "./wallet/saveWalletsInStorage.js";
 
 const asideItems = ["Wallets", "Categories"];
 
@@ -25,17 +23,14 @@ export const createAside = () => {
   const categoriesWrapper = document.createElement("div");
   categoriesWrapper.classList.add("aside-components");
 
-  saveCategoriesInStorage();
-  saveWalletsInStorage();
+  const categoriesLS = JSON.parse(localStorage.getItem("categories"));
+  const walletsLS = JSON.parse(localStorage.getItem("wallets"));
 
-  const categories = JSON.parse(localStorage.getItem("categories"));
-  const wallets = JSON.parse(localStorage.getItem("wallets"));
-
-  walletsWrapper.innerHTML += wallets
+  walletsWrapper.innerHTML += walletsLS
     .map((wallet) => renderWidget(wallet))
     .join("");
 
-  categoriesWrapper.innerHTML += categories
+  categoriesWrapper.innerHTML += categoriesLS
     .map((category) => renderWidget(category))
     .join("");
 

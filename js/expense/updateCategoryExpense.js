@@ -1,6 +1,7 @@
 export const updateCategoryExpense = (expenseData) => {
   const categories = JSON.parse(localStorage.getItem("categories"));
   const wallets = JSON.parse(localStorage.getItem("wallets"));
+  const totals = JSON.parse(localStorage.getItem("totals"));
 
   categories.map((category) => {
     if (category.title === expenseData.expenseCategory) {
@@ -20,5 +21,15 @@ export const updateCategoryExpense = (expenseData) => {
 
       localStorage.setItem("wallets", JSON.stringify(wallets));
     }
+  });
+
+  totals.map((total) => {
+    if (total.title === "Total expenses") {
+      let amount = Number(total.amount);
+      amount += Number(expenseData.expenseAmount);
+      total.amount = amount;
+    }
+
+    localStorage.setItem("totals", JSON.stringify(totals));
   });
 };
