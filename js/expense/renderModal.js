@@ -1,4 +1,5 @@
 import { categories } from "../../mockData/categories.js";
+import { wallets } from "../../mockData/wallets.js";
 import { handleSubmit } from "./handleSubmit.js";
 
 export const renderModal = (id) => {
@@ -15,7 +16,18 @@ export const renderModal = (id) => {
 
     <div class="modal-group">
             <label for="expense">Expense:</label>
-            <input type="text" id="expense" name="expense"><br><br>
+            <input type="text" id="expense" name="expense">
+        </div>
+        <div class="modal-group">
+            <label for="wallet">Wallet:</label>
+            <select id="wallet" name="wallet">
+              ${wallets
+                .map(
+                  (wallet) =>
+                    `<option value="${wallet.title}">${wallet.title}</option>`
+                )
+                .join("")}
+            </select>
         </div>
         <div class="modal-group">
             <label for="category">Category:</label>
@@ -26,12 +38,16 @@ export const renderModal = (id) => {
                     `<option value="${category.title}">${category.title}</option>`
                 )
                 .join("")}
-            </select><br><br>
+            </select>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
         </div>
+
         <div class="modal-group">
             <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount"><br><br>
+            <input type="number" id="amount" name="amount">
         </div>
+        
         <input type="submit" value="Log Expense" class="log-expense-button" id="${id}">
         </form>
   `;

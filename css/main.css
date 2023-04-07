@@ -11,14 +11,27 @@
     flex: 7;
     padding: 0.5rem 3rem;
     height: auto;
-    border-left: 1px solid var(--border-color);
+    /* border-left: 1px solid var(--border-color); */
 }
 
 .content-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.history-title {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 18px;
+}
+
+.history-container {
+    box-shadow: 2px 2px 4px var(--hover-color);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius:10px;
 }
 
 .component-history {
@@ -32,11 +45,22 @@
  .icon-pen-square::before {
     content: '\f044'; 
     font-family: 'Font Awesome 5 Free';
-    font-size: 1rem; 
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .icon-trash::before {
     content: '\f2ed'; 
     font-family: 'Font Awesome 5 Free';
     font-size: 1rem; 
+    cursor: pointer;
+}
+
+.icon-pen-square:hover {
+    color: var(--hover-color);
+}
+
+.icon-trash:hover {
+    color: var(--dangerous);
+
 }

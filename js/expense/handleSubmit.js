@@ -4,13 +4,14 @@ import { saveExpenseInStorage } from "./saveExpenseInStorage.js";
 import { updateCategoryExpense } from "./updateCategoryExpense.js";
 
 export const handleSubmit = (formData) => {
-  const { expense, category, amount } = formData;
+  const { expense, wallet, date, amount } = formData;
 
   const expenseData = {
     expenseName: expense.value,
+    expenseWallet: wallet.value,
     expenseCategory: category.value,
     expenseAmount: amount.value,
-    date: new Date().getFullYear(),
+    expenseDate: date.value,
   };
 
   const categorySearched = categories.find(

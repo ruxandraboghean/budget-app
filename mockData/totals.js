@@ -1,12 +1,12 @@
 export const totals = [
   {
     title: "Total incomes",
-    amount: 700,
+    amount: 0,
     iconSRC: "./icons/incomes.svg",
   },
   {
     title: "Total expenses",
-    amount: 400,
+    amount: 0,
     iconSRC: "./icons/expenses.svg",
   },
 ];

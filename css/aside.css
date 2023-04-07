@@ -3,8 +3,9 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding:  1rem 1rem 1rem 3rem;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding:  2rem 3rem 1rem 3rem;
     background: var(--primary-color);
     flex: 1;
     height: auto;
@@ -16,11 +17,51 @@
     margin-bottom: 1rem;
 }
 
-.aside-header {
+.aside-items {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     background-color: var(--primary-color);
     font-weight: 700;
     font-size: 18px;
+}
+
+.aside-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 2rem;
+}
+
+.aside-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.aside-components {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.aside-components-item {
+    display: flex;
+    padding: 1.2rem 0.2rem;
+}
+
+.icon-add::before {
+    content: '\f055'; 
+    font-family: 'Font Awesome 5 Free';
+    font-size: 0.9rem; 
+    cursor: pointer;
+}
+
+.icon-add:hover {
+    color: var(--hover-color);
 }

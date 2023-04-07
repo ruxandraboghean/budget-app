@@ -1,49 +1,48 @@
-import { createWidget } from "../components/createWidget.js";
-import { categories } from "../mockData/categories.js";
-import { walletInputs } from "../mockData/walletInputs.js";
-import { wallets } from "../mockData/wallets.js";
-import { createForm } from "./createForm.js";
+import { renderWidgets } from "./category/renderWidgets.js";
+import { renderWidget } from "./category/renderWidget.js";
+import { saveCategoriesInStorage } from "./category/saveCategoriesInStorage.js";
+import { saveWalletsInStorage } from "./wallet/saveWalletsInStorage.js";
+
+const asideItems = ["Wallets", "Categories"];
 
 export const createAside = () => {
-  const walletFragment = new DocumentFragment();
-  const walletTitle = document.createElement("h2");
-
-  const addButton1 = document.createElement("button");
-  const addButton = document.createElement("button");
-  addButton.textContent = "+";
-  addButton1.textContent = "+";
-
-  addButton.addEventListener("click", () => {
-    createForm(walletInputs, onSubmit());
-  });
-
-  walletTitle.textContent = "Wallets";
-  walletTitle.classList.add("aside-header");
-  walletTitle.appendChild(addButton1);
-
-  walletFragment.appendChild(walletTitle);
-
-  const categoryFragment = new DocumentFragment();
-  const categoryTitle = document.createElement("h2");
-  categoryTitle.textContent = "Categories";
-  categoryTitle.classList.add("aside-header");
-  categoryTitle.appendChild(addButton);
-
-  categoryFragment.appendChild(categoryTitle);
-
-  wallets.forEach((wallet) => {
-    const walletContainer = createWidget(wallet);
-    walletFragment.appendChild(walletContainer);
-  });
-
-  categories.forEach((category) => {
-    const categoryContainer = createWidget(category);
-
-    categoryFragment.appendChild(categoryContainer);
-  });
+  const asideFragment = new DocumentFragment();
 
   const aside = document.querySelector("aside");
-  aside.classList.add("aside");
-  aside.appendChild(walletFragment);
-  aside.appendChild(categoryFragment);
+
+  const asideContent = document.createElement("div");
+  asideContent.classList.add("aside-items");
+  asideContent.innerHTML += renderWidgets(asideItems);
+  asideFragment.append(asideContent);
+
+  const items = asideContent.getElementsByClassName("aside-item");
+  const walletAside = items[0];
+  const categoryAside = items[1];
+
+  const walletsWrapper = document.createElement("div");
+  walletsWrapper.classList.add("aside-components");
+
+  const categoriesWrapper = document.createElement("div");
+  categoriesWrapper.classList.add("aside-components");
+
+  saveCategoriesInStorage();
+  saveWalletsInStorage();
+
+  const categories = JSON.parse(localStorage.getItem("categories"));
+  const wallets = JSON.parse(localStorage.getItem("wallets"));
+
+  walletsWrapper.innerHTML += wallets
+    .map((wallet) => renderWidget(wallet))
+    .join("");
+
+  categoriesWrapper.innerHTML += categories
+    .map((category) => renderWidget(category))
+    .join("");
+
+  walletAside.append(walletsWrapper);
+  categoryAside.append(categoriesWrapper);
+
+  console.log(walletAside);
+
+  aside.appendChild(asideFragment);
 };

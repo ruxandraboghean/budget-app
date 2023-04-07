@@ -5,7 +5,7 @@ export const renderHistoryItem = (expense) => {
             <img src="${expense.iconSRC}" alt="ExpenseIcon"/>
             <div class="widget-item-info">
                 <h3 class="widget-title">${expense.expenseName}</h3>
-                <span class="widget-item-total">${expense.date}</span>
+                <span class="widget-item-total">${expense.expenseDate}</span>
             </div>
           </div>
           <div class="actions">

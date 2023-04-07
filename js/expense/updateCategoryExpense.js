@@ -1,13 +1,24 @@
-import { categories } from "../../mockData/categories.js";
-
 export const updateCategoryExpense = (expenseData) => {
-  const categorySearched = categories.find(
-    (categorySearched) => categorySearched.title === expenseData.expenseCategory
-  );
+  const categories = JSON.parse(localStorage.getItem("categories"));
+  const wallets = JSON.parse(localStorage.getItem("wallets"));
 
-  if (categorySearched) {
-    categorySearched.amount = expenseData.expenseAmount;
-  }
+  categories.map((category) => {
+    if (category.title === expenseData.expenseCategory) {
+      let amount = Number(category.amount);
+      amount += Number(expenseData.expenseAmount);
+      category.amount = amount;
 
-  console.log(categories);
+      localStorage.setItem("categories", JSON.stringify(categories));
+    }
+  });
+
+  wallets.map((wallet) => {
+    if (wallet.title === expenseData.expenseWallet) {
+      let amount = Number(wallet.amount);
+      amount -= Number(expenseData.expenseAmount);
+      wallet.amount = amount;
+
+      localStorage.setItem("wallets", JSON.stringify(wallets));
+    }
+  });
 };
