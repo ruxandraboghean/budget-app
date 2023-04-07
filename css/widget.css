@@ -1,7 +1,7 @@
 .widget-title {
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 100%;
     display: flex;
     align-items: center;
@@ -9,23 +9,10 @@
     margin: 0;
 }
 
-.widget-item, .widget-item-total-card {
+.widget-item {
     display: flex;
     padding: 0.8rem;
-    font-size: 14px;
- }
-
- .total-cards {
-    display: flex;
-    justify-content: space-around;
-    padding: 2rem;
- }
-
- .widget-item-total-card {
-    padding: 4rem 6rem;
-    background-color: var(--card-color);
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px var(--hover-color);
+    font-size: 0.9rem;
  }
 
 .widget-item-info {
@@ -33,7 +20,7 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 0.8rem;
-    font-size: 14px;
+    font-size: 0.9rem;
     gap: 0.2rem;
  }
 
@@ -41,5 +28,5 @@
     color: #828282;
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.8rem;
  }

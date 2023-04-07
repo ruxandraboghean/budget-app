@@ -3,10 +3,11 @@ import { renderHistoryItem } from "../renderHistoryItem.js";
 import { saveExpenseInStorage } from "./saveExpenseInStorage.js";
 import { updateCategoryExpense } from "./updateCategoryExpense.js";
 
-export const handleSubmit = (formData) => {
+export const handleSubmit = (id, formData) => {
   const { expense, wallet, date, amount } = formData;
 
   const expenseData = {
+    id: id,
     expenseName: expense.value,
     expenseWallet: wallet.value,
     expenseCategory: category.value,

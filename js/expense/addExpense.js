@@ -1,8 +1,10 @@
 import { toggleModal } from "./toggleModal.js";
 import { renderModal } from "./renderModal.js";
+import { generateUniqueID } from "../generateUniqueID.js";
 
 export const addExpense = () => {
-  const id = "log-expense";
+  const id = generateUniqueID();
+  console.log(id);
 
   const logExpenseButton = document.querySelector(".log-expense-button");
 
@@ -22,3 +24,5 @@ export const addExpense = () => {
     }
   });
 };
+
+

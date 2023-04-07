@@ -1,0 +1,31 @@
+.total-cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+ }
+
+ .widget-item-total-card {
+    display: flex;
+    font-size: 0.9rem;
+    padding: 4rem 6rem;
+    background-color: var(--card-color);
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px var(--hover-color);
+ }
+
+ .expenses-card {
+    background-color: var(--expenses);
+ }
+
+ @media screen and (max-width: 1200px) {
+    .total-cards {
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+     }
+
+     .widget-item-total-card {
+        font-size: 0.9rem;
+        padding: 2rem 4rem;
+     }
+  }

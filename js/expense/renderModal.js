@@ -8,7 +8,7 @@ export const renderModal = (id) => {
   const modalSection = document.createElement("section");
   modalSection.classList.add("modal");
   modalSection.classList.add("visible");
-  modalSection.setAttribute("id", "log-expense");
+  modalSection.setAttribute("id", id);
 
   modalSection.innerHTML += `
     <form class="modal-content" id="form-add-expense">
@@ -61,7 +61,7 @@ export const renderModal = (id) => {
     e.preventDefault();
 
     const data = e.target.elements;
-    handleSubmit(data);
+    handleSubmit(id, data);
 
     e.target.reset();
   });

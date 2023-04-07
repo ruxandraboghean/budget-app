@@ -23,7 +23,6 @@
     justify-content: space-between;
     background-color: var(--primary-color);
     font-weight: 700;
-    font-size: 18px;
 }
 
 .aside-item {
@@ -32,14 +31,13 @@
     justify-content: space-between;
     background-color: var(--primary-color);
     font-weight: 700;
-    font-size: 18px;
     margin-bottom: 2rem;
 }
 
 .aside-header {
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .aside-components {
@@ -47,7 +45,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
 .aside-components-item {
@@ -56,9 +54,9 @@
 }
 
 .icon-add::before {
-    content: '\f055'; 
+    content: '\f0fe'; 
     font-family: 'Font Awesome 5 Free';
-    font-size: 0.9rem; 
+    font-size: 1rem; 
     cursor: pointer;
 }
 

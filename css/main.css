@@ -17,13 +17,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
 .history-title {
     margin: 1rem;
     padding: 1rem;
-    font-size: 18px;
+    font-size:1.1rem;
 }
 
 .history-container {
@@ -43,7 +43,7 @@
  .actions {
     display: flex;
     gap: 1rem;
-    font-size: 12px;
+    font-size: 0.8rem;
  }
 
  .icon-pen-square::before {
@@ -67,4 +67,10 @@
 .icon-trash:hover {
     color: var(--dangerous);
 
+}
+
+@media screen and (max-width: 1200px) { 
+    .content-header {
+        font-size: 0.8rem;
+    }
 }

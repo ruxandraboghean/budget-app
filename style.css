@@ -6,6 +6,7 @@
 @import url('./css/main.css');
 @import url('./css/buttons.css');
 @import url('./css/modal.css');
+@import url('./css/cards.css');
 
 * {
     font-family: 'Montserrat', sans-serif;

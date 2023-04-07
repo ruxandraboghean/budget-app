@@ -19,4 +19,8 @@ export const createTotalCards = () => {
       totalCards.innerHTML += TotalCard(total);
     })
     .join("");
+
+  document
+    .getElementById("Total expenses")
+    .parentElement.classList.add("expenses-card");
 };

@@ -1,7 +1,7 @@
 .add-button {
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 0.9rem;
     line-height: 20px;
     text-align: center;
     border: 1px dashed var(--border-color);
@@ -15,7 +15,7 @@
     align-items: center;
     padding: 1rem 1.5rem;
     color:var(--primary-color);
-    font-size: 12px;
+    font-size: 0.9rem;
     cursor: pointer;
     background: var(--button-color);
     border-radius: 6px;
@@ -26,3 +26,9 @@
     border-color: var(--card-color);
 }
 
+@media screen and (max-width: 1200px) {
+    .log-expense-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
