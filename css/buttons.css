@@ -1,0 +1,36 @@
+.add-button {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    border: 1px dashed var(--border-color);
+    padding: 0.25rem 0.5rem;
+}
+
+.log-expense-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem;
+    gap: 8px;
+    color:var(--primary-color);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+    background: var(--button-color);
+    border-radius: 4px;
+}
+
+.log-expense-button:hover {
+    background-color: var(--hover-color);
+    border-color: var(--card-color);
+}
+
+ .actions {
+    display: flex;
+    gap: 1rem;
+ }
+ 

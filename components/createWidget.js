@@ -1,4 +1,4 @@
-export const createBudgetComponent = (component) => {
+export const createWidget = (component) => {
   const { title, amount, iconSRC } = component;
 
   const componentContainer = document.createElement("div");
@@ -11,10 +11,10 @@ export const createBudgetComponent = (component) => {
   componentDescription.textContent = `${amount} LEI`;
   componentIcon.setAttribute("src", `${iconSRC}`);
 
-  componentContainer.classList.add("component");
-  componentInfoContainer.classList.add("component-info");
-  componentTitle.classList.add("title");
-  componentDescription.classList.add("total-item");
+  componentContainer.classList.add("widget-item");
+  componentInfoContainer.classList.add("widget-item-info");
+  componentTitle.classList.add("widget-title");
+  componentDescription.classList.add("widget-item-total");
 
   componentContainer.appendChild(componentIcon);
   componentInfoContainer.appendChild(componentTitle);

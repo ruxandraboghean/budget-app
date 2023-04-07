@@ -1,0 +1,32 @@
+.widget-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #2F2F2F;
+    margin: 0;
+}
+
+.widget-item {
+    display: flex;
+    padding: 0.8rem;
+    font-size: 12px;
+ }
+
+.widget-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.8rem;
+    font-size: 12px;
+    gap: 0.2rem;
+ }
+
+.widget-item-total {
+    color: #828282;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+ }

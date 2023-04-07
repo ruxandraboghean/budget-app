@@ -1,27 +1,27 @@
 export const categories = [
   {
     title: "Utility",
-    amount: 250,
+    amount: 0,
     iconSRC: "./icons/home.svg",
   },
   {
     title: "Savings",
-    amount: 1000,
+    amount: 0,
     iconSRC: "./icons/saving.svg",
   },
   {
     title: "Shopping",
-    amount: 430,
+    amount: 0,
     iconSRC: "./icons/shopping.svg",
   },
   {
     title: "Personal",
-    amount: 150,
+    amount: 0,
     iconSRC: "./icons/personal.svg",
   },
   {
     title: "Health",
-    amount: 70,
+    amount: 0,
     iconSRC: "./icons/saving.svg",
   },
 ];

@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget App</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/21bea3b954.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <aside class="aside">
             <div class="logo-wrapper">
-                <img src='/icons/logo.png' alt="logo" class="logo"/>
+                BUDGET
             </div>
         </aside>
         <main class="content">
@@ -20,8 +21,24 @@
                     Hi, John Doe! </br>
                     How much did you spend today?
                 </p>
-                <button class="log-expense"> + Log Expense </button>
+                <button class="log-expense-button"> + Log Expense </button>
             </div>
+            <div class="total-card">
+                <div class="widget-item"><img src="./icons/incomes.svg">
+                    <div class="widget-item-info">
+                        <h3 class="widget-title">Total incomes</h3>
+                        <span class="widget-item-total">700 LEI</span>
+                    </div>
+                </div>
+                <div class="widget-item">
+                    <img src="./icons/expenses.svg">
+                    <div class="widget-item-info">
+                        <h3 class="widget-title">Total expenses</h3>
+                        <span class="widget-item-total">400 LEI</span>
+                    </div>
+                </div>
+            </div>
+            <h2 class="widget-title">History</h2>
         </main>
     </div>
     <script type="module" src="index.js"></script>

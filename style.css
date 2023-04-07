@@ -1,7 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('./css/colors.css');
+
+@import url('./css/aside.css');
+@import url('./css/widget.css');
+@import url('./css/main.css');
+@import url('./css/buttons.css');
+@import url('./css/modal.css');
+
 * {
     font-family: 'Montserrat', sans-serif;
 }
+
+html, body {
+    height: 100%;
+}
+
 body{
     margin: 0;
 }
@@ -13,169 +26,6 @@ body::-webkit-scrollbar {
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     min-height: 100%;
+    width: 100%;
 }
-
-.aside {
-    margin: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding:  1rem 1rem 1rem 3rem;
-    background: #FFFFFF;
-    border-right: 1px solid #E0E0E0;
-    flex: 2;
-}
-
-.logo{
-    width: 6rem;
-    height: 4rem;
-    margin-bottom: 1rem;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    font-weight: 700;
-    font-size: 18px;
-}
-
-
-.title {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 100%;
-    display: flex;
-    align-items: center;
-    color: #2F2F2F;
-}
-
-.add-button {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 20px;
-    text-align: center;
-    color: #374151;
-    border: 1px dashed gray;
-    padding: 0.25rem 0.5rem;
-}
-
-.component {
-   display: flex;
-   padding: 0.8rem;
-}
-
-.component-info {
-    display: flex;
-    flex-direction: column;
-    margin-left: 0.8rem;
- }
-.item-name {
-    color: #2F2F2F;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.total-item {
-    color: #828282;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
- }
-
-
- /* main content */
-
-.content {
-    background-color: #F5F5F5;
-    flex: 7;
-    padding: 0.5rem 3rem;
-}
-
-.content-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 2rem;
-}
-
-.log-expense {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 3rem;
-    gap: 8px;
-    color:#fff;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    cursor: pointer;
-    background: #252525;
-    border-radius: 4px;
-}
-
-.content-title-wrapper {
-    display: flex;
-    justify-content:flex-start;
-    align-items: center;
-    margin: 5rem;
-}
-
-.content-title {
-    margin-left: 1rem;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 100%;
-}
-
-.total-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.container-incomes, .container-expenses {
-    background-color: #fff;
-    width: 40rem;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-}
-
-.history {
-    padding: 5rem;
-}
-
-.total-card{
-    display: flex;
-    justify-content: space-around;
-    background-color: #cedad7;
-    padding: 1rem;
-    margin: 2rem 0;
-}
-
-.component-history {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem;
- }
- 
- .actions {
-    display: flex;
-    gap: 1rem;
- }
-
- .edit-btn, .remove-btn {
-    width: 1rem;
-    height: 1rem;
- }

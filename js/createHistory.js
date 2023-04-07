@@ -1,21 +1,22 @@
-import { createHistoryComponent } from "../components/createHistoryComponent.js";
-import { history } from "../mockData/history.js";
+import { renderHistoryItem } from "./renderHistoryItem.js";
 
 export const createHistory = () => {
   const historyFragment = new DocumentFragment();
-  const historyTitle = document.createElement("h2");
-  historyTitle.textContent = "History";
-  historyTitle.classList.add("title");
-
-  historyFragment.appendChild(historyTitle);
-
-  history.forEach((h) => {
-    const historyContainer = createHistoryComponent(h);
-
-    historyFragment.appendChild(historyContainer);
-  });
-
   const main = document.querySelector("main");
-  main.classList.add("content");
+
+  const historyContent = document.createElement("div");
+  historyContent.classList.add("history-container");
+
+  const isCreated = !!JSON.parse(localStorage.getItem("expenses"));
+
+  if (isCreated) {
+    const historyData = JSON.parse(localStorage.getItem("expenses"));
+
+    Object.values(historyData).map((history) => {
+      historyContent.innerHTML += renderHistoryItem(history);
+    });
+  }
+
+  historyFragment.append(historyContent);
   main.appendChild(historyFragment);
 };

@@ -1,0 +1,26 @@
+.aside {
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:  1rem 1rem 1rem 3rem;
+    background: var(--primary-color);
+    flex: 1;
+    height: auto;
+}
+
+.logo{
+    width: 6rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+}
+
+.aside-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    font-weight: 700;
+    font-size: 18px;
+}

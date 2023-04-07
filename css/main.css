@@ -1,0 +1,42 @@
+.total-card{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--card-color);
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.content {
+    background-color: var(--secondary-color);
+    flex: 7;
+    padding: 0.5rem 3rem;
+    height: auto;
+    border-left: 1px solid var(--border-color);
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.component-history {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem;
+ }
+
+
+ .icon-pen-square::before {
+    content: '\f044'; 
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1rem; 
+}
+
+.icon-trash::before {
+    content: '\f2ed'; 
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1rem; 
+}
