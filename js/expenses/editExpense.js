@@ -21,7 +21,6 @@ export const editExpense = (expenseId) => {
     }
   });
   toggleModal(modalId);
-  // History(expenseData);
 };
 
 function bindData(expense) {

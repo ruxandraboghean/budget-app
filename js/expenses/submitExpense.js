@@ -29,8 +29,8 @@ export const submitExpense = (modalId, expenseId, formData) => {
 
   document.querySelector(".history-container").innerHTML += newExpense;
 
-  saveExpenseInStorage(expenseData);
-  updateExpenses(expenseData);
+  saveExpenseInStorage(expenseData, expenseData.id);
+  updateExpenses("add", expenseData);
 
   toggleModal(modalId);
 };

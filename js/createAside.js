@@ -38,7 +38,5 @@ export const createAside = () => {
   walletAside.append(walletsWrapper);
   categoryAside.append(categoriesWrapper);
 
-  console.log(walletAside);
-
   aside.appendChild(asideFragment);
 };
