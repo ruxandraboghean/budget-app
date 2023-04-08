@@ -1,3 +1,6 @@
+import { createAside } from "../createAside.js";
+import { createTotalCards } from "../createTotalCards.js";
+
 export const updateExpenses = (expenseData) => {
   const categories = JSON.parse(localStorage.getItem("categories"));
   const wallets = JSON.parse(localStorage.getItem("wallets"));
@@ -32,4 +35,11 @@ export const updateExpenses = (expenseData) => {
 
     localStorage.setItem("totals", JSON.stringify(totals));
   });
+
+  document.querySelector(".aside-items").remove();
+  document
+    .querySelectorAll(".widget-item-total-card")
+    .forEach((el) => el.remove());
+  createAside();
+  createTotalCards();
 };

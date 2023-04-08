@@ -1,5 +1,3 @@
-import { editExpense } from "../expense/editExpense.js";
-
 export const History = (expense) => {
   return `
     <div class="component-history" id="${expense.id}">
@@ -12,10 +10,8 @@ export const History = (expense) => {
         </div>
         <div class="actions">
             <span> ${expense.expenseAmount} LEI </span>
-            <span class="icon-pen-square" onclick="${editExpense(
-              expense.id
-            )}"></span>
-            <span class="icon-trash"></span>
+            <span class="icon-pen-square"  id="edit-${expense.id}"></span>
+            <span class="icon-trash" id="delete-${expense.id}"></span>
         </div>
     </div>  
   `;

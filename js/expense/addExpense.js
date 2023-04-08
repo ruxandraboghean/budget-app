@@ -3,24 +3,32 @@ import { renderModal } from "./renderModal.js";
 import { generateUniqueID } from "../utils/generateUniqueID.js";
 
 export const addExpense = () => {
-  const id = generateUniqueID();
-  console.log(id);
+  const expenseId = generateUniqueID();
+  const modalId = "log-expense";
+  const expenses = JSON.parse(localStorage.getItem("expenses"));
 
   const logExpenseButton = document.querySelector(".log-expense-button");
 
   logExpenseButton.addEventListener("click", () => {
-    const isCreated = !!document.querySelector(`#${id}`);
+    const isCreated = !!document.querySelector(`#${modalId}`);
 
     if (!isCreated) {
-      renderModal(id);
+      expenses?.forEach((expense) => {
+        if (expenseId === expense.id) {
+          expenseId = generateUniqueID();
+        }
+      });
+
+      renderModal(modalId, expenseId);
 
       const closeButton = document.getElementById("close-modal");
 
       closeButton.addEventListener("click", () => {
-        toggleModal(id);
+        toggleModal(modalId);
+        document.getElementById(modalId).remove();
       });
     } else {
-      toggleModal(id);
+      toggleModal(modalId);
     }
   });
 };

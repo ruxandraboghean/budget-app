@@ -1,16 +1,16 @@
 export const Widgets = (items) => {
   return `
-        ${items
-          .map((item) => {
-            return ` 
-            <div class="aside-item">
-                <div class="aside-header">
-                  <span> ${item} </span>
-                  <span class="icon-add"></span>
-                </div>
+    ${items
+      .map((item) => {
+        return ` 
+        <div class="aside-item">
+            <div class="aside-header">
+                <span> ${item} </span>
+                <span class="icon-add"></span>
             </div>
-          `;
-          })
-          .join("")}
+        </div>
+        `;
+      })
+      .join("")}
     `;
 };

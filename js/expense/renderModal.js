@@ -1,17 +1,18 @@
 import { categories } from "../../mockData/categories.js";
 import { wallets } from "../../mockData/wallets.js";
 import { ExpenseModal } from "../components/ExpenseModal.js";
+import { generateUniqueID } from "../utils/generateUniqueID.js";
 import { submitExpense } from "./submitExpense.js";
 
-export const renderModal = (id) => {
+export const renderModal = (modalId, expenseId) => {
   const modalFragment = new DocumentFragment();
 
   const modalSection = document.createElement("section");
   modalSection.classList.add("modal");
   modalSection.classList.add("visible");
-  modalSection.setAttribute("id", id);
+  modalSection.setAttribute("id", modalId);
 
-  modalSection.innerHTML += ExpenseModal(id, wallets, categories);
+  modalSection.innerHTML += ExpenseModal(expenseId, wallets, categories);
 
   modalFragment.append(modalSection);
   document.body.appendChild(modalFragment);
@@ -22,8 +23,9 @@ export const renderModal = (id) => {
     e.preventDefault();
 
     const data = e.target.elements;
-    submitExpense(id, data);
+    submitExpense(modalId, expenseId, data);
 
     e.target.reset();
+    expenseId = generateUniqueID();
   });
 };

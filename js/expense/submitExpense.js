@@ -1,13 +1,14 @@
 import { categories } from "../../mockData/categories.js";
 import { History } from "../components/History.js";
+import { toggleModal } from "../utils/toggleModal.js";
 import { saveExpenseInStorage } from "./saveExpenseInStorage.js";
 import { updateExpenses } from "./updateExpenses.js";
 
-export const submitExpense = (id, formData) => {
+export const submitExpense = (modalId, expenseId, formData) => {
   const { expense, wallet, date, amount } = formData;
 
   const expenseData = {
-    id: id,
+    id: expenseId,
     expenseName: expense.value,
     expenseWallet: wallet.value,
     expenseCategory: category.value,
@@ -30,4 +31,6 @@ export const submitExpense = (id, formData) => {
 
   saveExpenseInStorage(expenseData);
   updateExpenses(expenseData);
+
+  toggleModal(modalId);
 };
