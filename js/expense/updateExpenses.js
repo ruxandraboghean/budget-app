@@ -1,4 +1,4 @@
-export const updateCategoryExpense = (expenseData) => {
+export const updateExpenses = (expenseData) => {
   const categories = JSON.parse(localStorage.getItem("categories"));
   const wallets = JSON.parse(localStorage.getItem("wallets"));
   const totals = JSON.parse(localStorage.getItem("totals"));

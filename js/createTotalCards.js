@@ -1,7 +1,7 @@
 import { totals } from "../mockData/totals.js";
-import { calculateIncomes } from "./calculateIncomes.js";
+import { calculateIncomes } from "./utils/calculateIncomes.js";
 import { TotalCard } from "./components/TotalCard.js";
-import { saveItemInLocalStorage } from "./saveItemInLocalStorage.js";
+import { saveItemInLocalStorage } from "./utils/saveItemInLocalStorage.js";
 
 export const createTotalCards = () => {
   const totalCards = document.getElementById("totals");

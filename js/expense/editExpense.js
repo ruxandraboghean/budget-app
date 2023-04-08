@@ -1,5 +1,5 @@
 import { renderModal } from "./renderModal.js";
-import { toggleModal } from "./toggleModal.js";
+import { toggleModal } from "../utils/toggleModal.js";
 
 export const editExpense = (id) => {
   console.log(id);

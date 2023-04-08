@@ -1,4 +1,4 @@
-import { renderHistoryItem } from "./renderHistoryItem.js";
+import { History } from "./components/History.js";
 
 export const createHistory = () => {
   const historyFragment = new DocumentFragment();
@@ -13,7 +13,7 @@ export const createHistory = () => {
     const historyData = JSON.parse(localStorage.getItem("expenses"));
 
     Object.values(historyData).map((history) => {
-      historyContent.innerHTML += renderHistoryItem(history);
+      historyContent.innerHTML += History(history);
     });
   }
 

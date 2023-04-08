@@ -1,9 +1,9 @@
 import { categories } from "../../mockData/categories.js";
-import { renderHistoryItem } from "../renderHistoryItem.js";
+import { History } from "../components/History.js";
 import { saveExpenseInStorage } from "./saveExpenseInStorage.js";
-import { updateCategoryExpense } from "./updateCategoryExpense.js";
+import { updateExpenses } from "./updateExpenses.js";
 
-export const handleSubmit = (id, formData) => {
+export const submitExpense = (id, formData) => {
   const { expense, wallet, date, amount } = formData;
 
   const expenseData = {
@@ -24,10 +24,10 @@ export const handleSubmit = (id, formData) => {
     expenseData.iconSRC = "";
   }
 
-  const newExpense = renderHistoryItem(expenseData);
+  const newExpense = History(expenseData);
 
   document.querySelector(".history-container").innerHTML += newExpense;
 
   saveExpenseInStorage(expenseData);
-  updateCategoryExpense(expenseData);
+  updateExpenses(expenseData);
 };

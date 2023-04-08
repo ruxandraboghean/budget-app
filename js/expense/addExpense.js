@@ -1,6 +1,6 @@
-import { toggleModal } from "./toggleModal.js";
+import { toggleModal } from "../utils/toggleModal.js";
 import { renderModal } from "./renderModal.js";
-import { generateUniqueID } from "../generateUniqueID.js";
+import { generateUniqueID } from "../utils/generateUniqueID.js";
 
 export const addExpense = () => {
   const id = generateUniqueID();
@@ -24,5 +24,3 @@ export const addExpense = () => {
     }
   });
 };
-
-

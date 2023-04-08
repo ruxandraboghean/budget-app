@@ -1,5 +1,5 @@
-import { renderWidgets } from "./category/renderWidgets.js";
-import { renderWidget } from "./category/renderWidget.js";
+import { Widgets } from "./components/Widgets.js";
+import { Widget } from "./components/Widget.js";
 
 const asideItems = ["Wallets", "Categories"];
 
@@ -9,8 +9,9 @@ export const createAside = () => {
   const aside = document.querySelector("aside");
 
   const asideContent = document.createElement("div");
+
   asideContent.classList.add("aside-items");
-  asideContent.innerHTML += renderWidgets(asideItems);
+  asideContent.innerHTML += Widgets(asideItems);
   asideFragment.append(asideContent);
 
   const items = asideContent.getElementsByClassName("aside-item");
@@ -27,11 +28,11 @@ export const createAside = () => {
   const walletsLS = JSON.parse(localStorage.getItem("wallets"));
 
   walletsWrapper.innerHTML += walletsLS
-    .map((wallet) => renderWidget(wallet))
+    .map((wallet) => Widget(wallet))
     .join("");
 
   categoriesWrapper.innerHTML += categoriesLS
-    .map((category) => renderWidget(category))
+    .map((category) => Widget(category))
     .join("");
 
   walletAside.append(walletsWrapper);
