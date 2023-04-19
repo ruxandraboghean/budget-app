@@ -21,7 +21,6 @@ export const submitExpense = (
   );
 
   const incomeValue = filteredArray.length > 0 ? filteredArray[0].amount : null;
-  console.log(incomeValue, "income");
 
   // create error message
 
@@ -41,10 +40,8 @@ export const submitExpense = (
     amount.value === ""
   ) {
     errMessage.textContent = "All fields should be completed!";
-    console.log(errMessage);
   } else if (amount.value < 0) {
     errMessage.textContent = "The amount should be bigger than 0";
-    console.log(errMessage);
   } else if (amount.value > incomeValue) {
     errMessage.textContent = "The amount should be in your budget";
   } else {
@@ -72,7 +69,5 @@ export const submitExpense = (
     document.querySelector(".history-container").innerHTML += newExpense;
 
     saveExpenseInStorage(modalId, expenseData, expenseData.id, isEventActive);
-
-    // toggleModal(modalId);
   }
 };

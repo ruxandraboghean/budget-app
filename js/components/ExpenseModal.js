@@ -18,7 +18,7 @@ export const ExpenseModal = (id, wallets, categories) => {
                 .join("")}
             </select>
         </div>
-        <div class="modal-group">
+        <div class="modal-group double-group">
             <label for="category">Category:</label>
             <select id="category" name="category">
               ${categories

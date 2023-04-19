@@ -3,7 +3,6 @@ import { renderModal } from "./renderModal.js";
 
 export const editExpense = (expenseId) => {
   const modalId = "log-expense";
-  console.log(modalId, "modalId");
   const expenses = JSON.parse(localStorage.getItem("expenses"));
 
   expenses.forEach((expense) => {

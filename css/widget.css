@@ -10,7 +10,7 @@
 .widget-item {
     display: flex;
     padding: 0.8rem;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
  }
 
 .widget-item-info {
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 0.8rem;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     gap: 0.2rem;
  }
 
@@ -26,5 +26,5 @@
     color: #828282;
     font-style: normal;
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
  }

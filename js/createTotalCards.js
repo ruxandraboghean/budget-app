@@ -14,8 +14,7 @@ export const createTotalCards = () => {
      .map((total) => {
        if (total.title === "Total incomes") {
          const updatedTotalIncome = calculateIncomes(total);
-         total.amount = updatedTotalIncome.amount;
-         console.log(updatedTotalIncome, "@total");
+         total.amount = Number(updatedTotalIncome.amount);
        }
 
        totalCards.innerHTML += TotalCard(total);

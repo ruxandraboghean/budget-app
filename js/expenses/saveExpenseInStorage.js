@@ -21,16 +21,16 @@ export const saveExpenseInStorage = (
     const expenses = JSON.parse(localStorage.getItem("expenses"));
 
     if (isEventActive) {
-      console.log(isEventActive, "save new expense");
       expenses.push(expenseData);
       localStorage.setItem("expenses", JSON.stringify(expenses));
+
       updateExpenses("add", expenseData);
+
       document.getElementById(modalId).remove();
       document.querySelector(".history-container").remove();
+
       createHistory();
     } else {
-      console.log("save edited expense");
-
       let previousData = [];
 
       const modifiedExpenses = expenses.map((expense) => {

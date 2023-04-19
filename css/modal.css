@@ -1,10 +1,12 @@
-.modal {
-    z-index: 999;
-    position: absolute;
-    background-color: rgba(0,0,0,0.4);
-    display: none;
+section {
     min-height: 100%;
     min-width: 100%;
+}
+.modal {
+    z-index: 999;
+    position: fixed;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -26,18 +28,39 @@
   
 .modal-group {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.modal-group label {
+    width: 25%;
+}
+
+.modal-group input, .modal-group select {
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    max-width: 100%;
+    width: 70%;
+    border-color: none;
+ 
+    border-bottom-style: none;
+    border-color: var(--secondary-color) ;
+}
+
+
+.modal-content select {
+    width: 75%;
+}
+
+.double-group select{
     gap: 1rem;
 }
 
-.modal-content input, .modal-content select {
-    border-radius: 5px;
-    border-color: var(--card-color);
-    padding: 0.5rem 1rem;
-    width: 100%;
-    max-width: 100%;
-    margin-left: auto; 
+.double-group label {
+   width: 90%;
 }
 
 .modal-content input:focus, .modal-content select:focus {
@@ -48,7 +71,6 @@
 .modal-content input[type="submit"], .icon-circle-xmark {
     margin-left: auto; 
     width: auto;
-    margin-right: 1rem;
     margin-bottom: 1.5rem;
     cursor: pointer;
 }
@@ -57,7 +79,9 @@
     margin-top: 2rem;
     height: 2.5rem;
     margin-bottom: 0;
+    border-color:none;
 }
+
 
 .modal-content input[type="submit"]:active, .modal-content input[type="submit"]:focus {
     color:black;

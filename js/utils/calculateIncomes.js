@@ -6,7 +6,7 @@ export const calculateIncomes = (income) => {
     incomeAmount += Number(income.amount);
   } 
   wallets.forEach((wallet) => {
-    incomeAmount += wallet.amount;
+    incomeAmount += Number(wallet.amount);
   });
   income.amount = incomeAmount;
 

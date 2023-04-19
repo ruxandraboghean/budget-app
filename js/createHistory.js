@@ -17,6 +17,16 @@ export const createHistory = () => {
     });
   }
 
+  if (historyContent.childNodes.length === 0) {
+    historyContent.classList.add("empty-history");
+    const emptyData = document.createElement("img");
+    const emptyDataMessage = document.createElement("p");
+    emptyDataMessage.textContent = "Nothing in history...";
+    emptyData.setAttribute("src", "../icons/empty-folder.png");
+    emptyData.classList.add("empty-folder");
+    historyContent.append(emptyData, emptyDataMessage);
+  } 
+
   historyFragment.append(historyContent);
   main.appendChild(historyFragment);
 };

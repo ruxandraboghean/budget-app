@@ -134,7 +134,6 @@ export const updateExpenses = (action, expenseData, previousData) => {
 
         const newCategoryIconSRC = newCategory[0].iconSRC;
         expense.iconSRC = newCategoryIconSRC;
-        console.log(expense);
       }
 
       localStorage.setItem("expenses", JSON.stringify(expenses));
