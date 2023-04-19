@@ -1,6 +1,4 @@
-import { categories } from "../../mockData/categories.js";
 import { History } from "../components/History.js";
-import { toggleModal } from "../utils/toggleModal.js";
 import { saveExpenseInStorage } from "./saveExpenseInStorage.js";
 
 export const submitExpense = (
@@ -11,6 +9,8 @@ export const submitExpense = (
   form
 ) => {
   const { expense, wallet, date, amount } = formData;
+
+  const categories = JSON.parse(localStorage.getItem("categories"));
 
   // get total income
 

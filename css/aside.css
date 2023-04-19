@@ -24,6 +24,7 @@
     height: auto;
 }
 
+
 .aside-items {
     display: flex;
     flex-direction: column;
@@ -45,7 +46,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
-    box-shadow: 0.5px 1px 0.5px 1px var(--border-color);
+    box-shadow: 0.5px 1px 0.5px 0.2px var(--border-color);
     padding: 0.5rem 1rem;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -73,4 +74,37 @@
 
 .icon-add:hover {
     color: var(--hover-color);
+}
+
+@media screen and (max-width: 678px) { 
+    .aside {
+        padding:  0.25rem 1rem 0.5rem 1rem;
+        width: 15%;
+    }
+
+    .aside-components {
+       align-items: center;
+    }
+    .aside-header {
+        padding: 0;
+        margin: 0.2rem;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .aside-header span {
+        display: none;
+        
+    }
+    #add-wallets-button, #add-categories-button {
+        display: flex;
+    }
+    .logo-wrapper {
+        width: auto;
+        justify-content: center;
+    }
+    .logo-wrapper span {
+        display: none;
+    }
 }

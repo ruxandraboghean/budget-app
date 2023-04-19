@@ -20,9 +20,11 @@ export const createAside = () => {
 
   const walletsWrapper = document.createElement("div");
   walletsWrapper.classList.add("aside-components");
+  walletsWrapper.id = "aside-components-wallets";
 
   const categoriesWrapper = document.createElement("div");
   categoriesWrapper.classList.add("aside-components");
+  categoriesWrapper.id = "aside-components-categories";
 
   const categoriesLS = JSON.parse(localStorage.getItem("categories"));
   const walletsLS = JSON.parse(localStorage.getItem("wallets"));

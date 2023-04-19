@@ -1,11 +1,12 @@
-import { categories } from "../../mockData/categories.js";
-import { wallets } from "../../mockData/wallets.js";
 import { ExpenseModal } from "../components/ExpenseModal.js";
 import { generateUniqueID } from "../utils/generateUniqueID.js";
 import { submitExpense } from "./submitExpense.js";
 
 export const renderModal = (modalId, expenseId, isEventActive) => {
   const modalFragment = new DocumentFragment();
+
+  const categories = JSON.parse(localStorage.getItem("categories"));
+  const wallets = JSON.parse(localStorage.getItem("wallets"));
 
   const modalSection = document.createElement("section");
   modalSection.classList.add("modal");

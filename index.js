@@ -7,6 +7,7 @@ import { saveItemInLocalStorage } from "./js/utils/saveItemInLocalStorage.js";
 import { createExpenseAction } from "./js/expenses/createExpenseAction.js";
 import { addExpense } from "./js/expenses/addExpense.js";
 import { addWallet } from "./js/wallets/addWallet.js";
+import { addCategory } from "./js/categories/addCategory.js";
 
 saveItemInLocalStorage("categories", categories);
 saveItemInLocalStorage("wallets", wallets);
@@ -16,3 +17,4 @@ createHistory();
 createExpenseAction();
 addExpense();
 addWallet();
+addCategory();

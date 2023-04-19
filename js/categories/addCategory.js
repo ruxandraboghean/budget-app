@@ -1,13 +1,11 @@
 import { toggleModal } from "../utils/toggleModal.js";
 import { renderAsideModal } from "../utils/renderAsideModal.js";
 
-export const addWallet = () => {
-  const modalId = "add-wallet";
+export const addCategory = () => {
+  const modalId = "add-category";
+  const addcategoryButton = document.querySelector("#add-categories-button");
 
-  const addWalletButton = document.querySelector("#add-wallets-button");
-
-  addWalletButton.addEventListener("click", () => {
-    console.log("clicked");
+  addcategoryButton.addEventListener("click", () => {
     const isEventActive = true;
     const isCreated = !!document.querySelector(`#${modalId}`);
 
