@@ -7,9 +7,10 @@ export const addExpense = () => {
   const modalId = "log-expense";
   const expenses = JSON.parse(localStorage.getItem("expenses"));
 
-  const logExpenseButton = document.querySelector(".log-expense-button");
+  const logExpenseButton = document.querySelector("#log-expense-button");
 
   logExpenseButton.addEventListener("click", () => {
+    const isEventActive = true;
     const isCreated = !!document.querySelector(`#${modalId}`);
 
     if (!isCreated) {
@@ -19,7 +20,7 @@ export const addExpense = () => {
         }
       });
 
-      renderModal(modalId, expenseId);
+      renderModal(modalId, expenseId, isEventActive);
 
       const closeButton = document.getElementById("close-modal");
 

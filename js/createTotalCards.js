@@ -10,15 +10,19 @@ export const createTotalCards = () => {
 
   const totalsLS = JSON.parse(localStorage.getItem("totals"));
 
-  totalsLS
-    .map((total) => {
-      if (total.title === "Total incomes") {
-        calculateIncomes(total);
-      }
+   totalsLS
+     .map((total) => {
+       if (total.title === "Total incomes") {
+         const updatedTotalIncome = calculateIncomes(total);
+         total.amount = updatedTotalIncome.amount;
+         console.log(updatedTotalIncome, "@total");
+       }
 
-      totalCards.innerHTML += TotalCard(total);
-    })
-    .join("");
+       totalCards.innerHTML += TotalCard(total);
+     })
+     .join("");
+
+   localStorage.setItem("totals", JSON.stringify(totalsLS));
 
   document
     .getElementById("Total expenses")
