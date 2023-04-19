@@ -31,11 +31,11 @@ export const saveExpenseInStorage = (
     } else {
       console.log("save edited expense");
 
-      let previousAmount = 0;
+      let previousData = [];
 
       const modifiedExpenses = expenses.map((expense) => {
         if (expense.id === id) {
-          previousAmount = expense.expenseAmount;
+          previousData = expense;
 
           return (expense = {
             ...expense,
@@ -50,7 +50,7 @@ export const saveExpenseInStorage = (
         }
       });
       localStorage.setItem("expenses", JSON.stringify(modifiedExpenses));
-      updateExpenses("edit", expenseData, previousAmount);
+      updateExpenses("edit", expenseData, previousData);
       document.getElementById(modalId).remove();
     }
 
