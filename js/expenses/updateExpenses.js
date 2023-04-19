@@ -85,20 +85,31 @@ export const updateExpenses = (action, expenseData, previousData) => {
         amount += Number(expenseData.expenseAmount);
         category.amount = amount;
       } else if (category.title === previousData.expenseCategory) {
-        category.amount -= previousData.expenseAmount;
+        category.amount -= Number(previousData.expenseAmount);
       }
       localStorage.setItem("categories", JSON.stringify(categories));
     });
 
     wallets.map((wallet) => {
-      if (wallet.title === expenseData.expenseWallet) {
+      if (
+        previousData.expenseWallet === expenseData.expenseWallet &&
+        wallet.title === expenseData.expenseWallet
+      ) {
         let amount = Number(wallet.amount);
         amount += Number(previousData.expenseAmount);
         amount -= Number(expenseData.expenseAmount);
         wallet.amount = amount;
-
-        localStorage.setItem("wallets", JSON.stringify(wallets));
+      } else if (
+        previousData.expenseWallet !== expenseData.expenseWallet &&
+        wallet.title === expenseData.expenseWallet
+      ) {
+        let amount = Number(wallet.amount);
+        amount -= Number(expenseData.expenseAmount);
+        wallet.amount = amount;
+      } else if (wallet.title === previousData.expenseWallet) {
+        wallet.amount += Number(previousData.expenseAmount);
       }
+      localStorage.setItem("wallets", JSON.stringify(wallets));
     });
 
     totals.map((total) => {
