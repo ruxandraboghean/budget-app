@@ -11,15 +11,11 @@ export const addExpense = () => {
 
   logExpenseButton.addEventListener("click", () => {
     const isEventActive = true;
-    const isCreated = !!document.querySelector(`#${modalId}`);
+    const isCreated = !!document.querySelector(`#${modalId}`); // daca e null - false, daca exista e true
 
-    if (!isCreated) {
-      expenses?.forEach((expense) => {
-        if (expenseId === expense.id) {
-          expenseId = generateUniqueID();
-        }
-      });
-
+    if (!isCreated && expenses === null) {
+      console.log(expenses, "@expenses");
+      console.log("i m in the first case");
       renderModal(modalId, expenseId, isEventActive);
 
       const closeButton = document.getElementById("close-modal");
@@ -29,7 +25,14 @@ export const addExpense = () => {
         document.getElementById(modalId).remove();
       });
     } else {
-      toggleModal(modalId);
+      expenses?.forEach((expense) => {
+        if (expenseId === expense.id) {
+          expenseId = generateUniqueID();
+        }
+      });
+
+      console.log(expenseId);
+      renderModal(modalId, expenseId, isEventActive);
     }
   });
 };

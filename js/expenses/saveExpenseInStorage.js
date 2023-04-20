@@ -1,4 +1,7 @@
+import { addCategory } from "../categories/addCategory.js";
 import { createHistory } from "../createHistory.js";
+import { generateUniqueID } from "../utils/generateUniqueID.js";
+import { addWallet } from "../wallets/addWallet.js";
 import { createExpenseAction } from "./createExpenseAction.js";
 import { updateExpenses } from "./updateExpenses.js";
 
@@ -21,6 +24,11 @@ export const saveExpenseInStorage = (
     const expenses = JSON.parse(localStorage.getItem("expenses"));
 
     if (isEventActive) {
+      expenses.map((expense) => {
+        if (expense.id === expenseData.id) {
+          expenseData.id = generateUniqueID();
+        }
+      });
       expenses.push(expenseData);
       localStorage.setItem("expenses", JSON.stringify(expenses));
 
@@ -57,5 +65,7 @@ export const saveExpenseInStorage = (
     document.querySelector(".history-container").remove();
     createHistory();
     createExpenseAction();
+    addWallet();
+    addCategory();
   }
 };
