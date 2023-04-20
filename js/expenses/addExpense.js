@@ -12,7 +12,7 @@ export const addExpense = () => {
 
   logExpenseButton.addEventListener("click", () => {
     const isEventActive = true;
-    const isCreated = !!document.querySelector(`#${modalId}`); // daca e null - false, daca exista e true
+    const isCreated = !!document.querySelector(`#${modalId}`);
 
     if (!isCreated && expenses === null) {
       renderModal(modalId, expenseId, isEventActive);

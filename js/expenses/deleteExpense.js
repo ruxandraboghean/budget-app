@@ -1,4 +1,6 @@
+import { addCategory } from "../categories/addCategory.js";
 import { createHistory } from "../createHistory.js";
+import { addWallet } from "../wallets/addWallet.js";
 import { createExpenseAction } from "./createExpenseAction.js";
 import { updateExpenses } from "./updateExpenses.js";
 
@@ -23,4 +25,6 @@ export const deleteExpense = (id) => {
 
   createHistory();
   createExpenseAction();
+  addCategory();
+  addWallet();
 };
