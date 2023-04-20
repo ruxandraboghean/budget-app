@@ -11,6 +11,7 @@ export const submitExpense = (
   const { expense, wallet, date, amount } = formData;
 
   const categories = JSON.parse(localStorage.getItem("categories"));
+  const wallets = JSON.parse(localStorage.getItem("wallets"));
 
   // get total income
 
@@ -32,6 +33,12 @@ export const submitExpense = (
     form.append(errMessage);
   }
 
+  const selectedWallet = wallets.filter(
+    (walletItem) => walletItem.title === wallet.value
+  );
+
+  const selectedWalletValue = Number(selectedWallet[0].amount);
+
   // check form inputs
   if (
     expense.value === "" ||
@@ -40,10 +47,14 @@ export const submitExpense = (
     amount.value === ""
   ) {
     errMessage.textContent = "All fields should be completed!";
+    return errMessage;
   } else if (amount.value < 0) {
     errMessage.textContent = "The amount should be bigger than 0";
-  } else if (amount.value > incomeValue) {
-    errMessage.textContent = "The amount should be in your budget";
+    return errMessage;
+  } else if (amount.value > selectedWalletValue) {
+    errMessage.textContent =
+      "Check your budget! You may want to change the wallet";
+    return errMessage;
   } else {
     const expenseData = {
       id: expenseId,

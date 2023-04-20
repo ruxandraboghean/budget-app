@@ -24,9 +24,15 @@ export const renderModal = (modalId, expenseId, isEventActive) => {
     e.preventDefault();
 
     const data = e.target.elements;
-    submitExpense(modalId, expenseId, data, isEventActive, expenseForm);
+    const isError = submitExpense(
+      modalId,
+      expenseId,
+      data,
+      isEventActive,
+      expenseForm
+    );
 
-    e.target.reset();
+    !isError && e.target.reset();
     expenseId = generateUniqueID();
   });
 };
