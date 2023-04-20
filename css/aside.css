@@ -108,3 +108,7 @@
         display: none;
     }
 }
+
+.amount-hidden {
+    display: none !important;
+}

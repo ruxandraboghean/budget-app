@@ -1,4 +1,5 @@
 import { createHistory } from "../createHistory.js";
+import { createExpenseAction } from "./createExpenseAction.js";
 import { updateExpenses } from "./updateExpenses.js";
 
 export const deleteExpense = (id) => {
@@ -21,4 +22,5 @@ export const deleteExpense = (id) => {
   document.querySelector(".history-container").remove();
 
   createHistory();
+  createExpenseAction();
 };

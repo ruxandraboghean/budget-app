@@ -9,6 +9,7 @@ export const addExpense = () => {
 
   const logExpenseButton = document.querySelector("#log-expense-button");
 
+
   logExpenseButton.addEventListener("click", () => {
     const isEventActive = true;
     const isCreated = !!document.querySelector(`#${modalId}`); // daca e null - false, daca exista e true
@@ -17,7 +18,6 @@ export const addExpense = () => {
       console.log(expenses, "@expenses");
       console.log("i m in the first case");
       renderModal(modalId, expenseId, isEventActive);
-
       const closeButton = document.getElementById("close-modal");
 
       closeButton.addEventListener("click", () => {
@@ -30,9 +30,13 @@ export const addExpense = () => {
           expenseId = generateUniqueID();
         }
       });
-
-      console.log(expenseId);
       renderModal(modalId, expenseId, isEventActive);
+
+      const closeButton = document.getElementById("close-modal");
+
+      closeButton.addEventListener("click", () => {
+        document.getElementById(modalId).remove();
+      });
     }
   });
 };

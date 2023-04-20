@@ -43,6 +43,12 @@ export const renderAsideModal = (modalId, isEventActive) => {
 
     const categoryForm = document.getElementById("form-add-category");
 
+    const amountInput = categoryForm.querySelector("#amount");
+
+    amountInput.value = "0";
+    amountInput.disabled = true;
+
+
     categoryForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
