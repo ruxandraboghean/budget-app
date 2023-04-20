@@ -20,7 +20,6 @@
     background: var(--button-color);
     border-radius: 6px;
     border-color: var(--card-color);
-
 }
 
 .log-expense-button:hover {

@@ -15,8 +15,6 @@ export const addExpense = () => {
     const isCreated = !!document.querySelector(`#${modalId}`); // daca e null - false, daca exista e true
 
     if (!isCreated && expenses === null) {
-      console.log(expenses, "@expenses");
-      console.log("i m in the first case");
       renderModal(modalId, expenseId, isEventActive);
       const closeButton = document.getElementById("close-modal");
 
